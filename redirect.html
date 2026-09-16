@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting... - PLAYZONE WiFi</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+    <script>
+        function doRedirect() {
+            setTimeout(function() {
+                const isLocal = window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1' || 
+                                window.location.protocol === 'file:';
+                if (isLocal) {
+                    window.location.href = "status.html";
+                } else {
+                    window.location.href = "$(link-redirect)";
+                }
+            }, 2000);
+        }
+    </script>
+</head>
+<body onload="doRedirect()">
+
+<div class="app-container" style="justify-content: center; align-items: center; padding: 24px;">
+    <!-- Main Card -->
+    <main class="main-card" style="flex: none; width: 100%; border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 22px; text-align: center; background-color: var(--card-bg-elevated);">
+        
+        <div class="portal-welcome" style="margin-bottom: 24px;">
+            <h2 class="portal-title">CONNECTING TO <span>PLAYZONE</span></h2>
+            <p class="portal-subtitle">Menyiapkan koneksi high-speed gaming Anda...</p>
+        </div>
+
+        <!-- Loading Dots -->
+        <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <p style="font-size: 11px; color: var(--text-muted); font-weight: 600; margin-top: 20px;">
+            Jika tidak dialihkan otomatis, <a href="status.html" style="color: var(--primary-cyan); text-decoration: underline; font-weight: 700;">klik di sini</a>.
+        </p>
+    </main>
+</div>
+
+</body>
+</html>
